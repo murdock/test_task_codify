@@ -51,7 +51,6 @@ A minimalistic full-stack slot machine built with **React + Vite (TS)** on the c
 ├── package.json
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
-├── POLISHEDREADME.md
 ├── README.MD
 └── server
     ├── __tests__
