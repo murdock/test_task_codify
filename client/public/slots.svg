@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="100" height="100">
+  <rect x="12" y="20" width="48" height="36" rx="4" ry="4" fill="#d22f27" stroke="#000" stroke-width="2"/>
+  <rect x="18" y="26" width="12" height="24" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <rect x="30" y="26" width="12" height="24" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <rect x="42" y="26" width="12" height="24" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  
+  <!-- Slot symbols -->
+  <text x="24" y="44" font-size="16" text-anchor="middle">7</text>
+  <text x="36" y="44" font-size="16" text-anchor="middle">7</text>
+  <text x="48" y="44" font-size="16" text-anchor="middle">7</text>
+  
+  <!-- Lever -->
+  <line x1="60" y1="20" x2="68" y2="10" stroke="#000" stroke-width="2"/>
+  <circle cx="68" cy="10" r="4" fill="#d22f27" stroke="#000" stroke-width="1.5"/>
+  
+  <!-- Base -->
+  <rect x="20" y="56" width="32" height="6" fill="#000"/>
+</svg>

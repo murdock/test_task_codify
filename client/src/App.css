@@ -1,0 +1,156 @@
+.page {
+  padding: 20px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.machine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+/* Slots row */
+.slot-machine {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Each slot */
+.slot {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  border: 4px solid #333;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3),
+              0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+/* Spinning animation */
+.slot.spinning {
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotateX(0deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+/* Lever container (the hinge is at the bottom) */
+.lever {
+  position: relative;
+  height: 160px;
+  width: 20px;
+  margin-left: 2rem;
+
+  background: linear-gradient(to right, #333, #666, #aaa, #666, #333);
+  border-radius: 10px;
+  box-shadow:
+    inset 2px 2px 6px rgba(255,255,255,0.2),
+    inset -2px -2px 6px rgba(0,0,0,0.6),
+    4px 6px 12px rgba(0,0,0,0.6);
+
+  transform-origin: bottom center; /* pivot from the base */
+}
+
+/* Horizontal bar across the top */
+.lever::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background: linear-gradient(to bottom, #333, #666, #aaa, #666, #333);
+  border-radius: 10px;
+  box-shadow:
+    inset 2px 2px 6px rgba(255,255,255,0.2),
+    inset -2px -2px 6px rgba(0,0,0,0.6),
+    2px 4px 8px rgba(0,0,0,0.6);
+}
+
+/* Knob at end of horizontal bar */
+.lever::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: calc(50% + 40px);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #e74c3c, #c0392b);
+  border-radius: 50%;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.6);
+}
+
+/* Animation: lever thrown forward like a breaker */
+.lever.pull {
+  animation: lever-pull 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes lever-pull {
+  0%   { transform: rotateX(0deg); }
+  25%  { transform: rotateX(60deg); }  /* thrown forward */
+  60%  { transform: rotateX(10deg); }  /* bounce back */
+  80%  { transform: rotateX(25deg); }  /* rebound */
+  100% { transform: rotateX(0deg); }   /* settle upright */
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.lever-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: gold;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s;
+}
+
+.lever-button:active {
+  transform: scale(0.95);
+}
+
+.button-disabled {
+  background: gray;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* semi-opaque */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
