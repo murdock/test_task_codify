@@ -1,0 +1,15 @@
+{
+  "name": "CODIFY.IO",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter server dev\" \"pnpm --filter client dev\"",
+    "build": "pnpm --filter server build && pnpm --filter client build",
+    "start": "node server/dist/index.js"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
